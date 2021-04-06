@@ -24,3 +24,5 @@ function filterArray(array, filter = 5) {
 }
 
 console.log(filterArray([1, 2, 4, 6, 9, 10]));
+
+// result:  [ 6, 9, 10 ]
