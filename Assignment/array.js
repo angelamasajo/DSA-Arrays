@@ -76,25 +76,44 @@ function main(){
   let arr = new Array();
   // Add an item to the array
   arr.push(3);
+  // Array { length: 1, _capacity: 3, ptr: 0 }
+
   arr.push(5);
   arr.push(15);
   arr.push(19);
   arr.push(45);
   arr.push(10);
-  console.log(arr);
+  // Array { length: 6, _capacity: 12, ptr: 3 }
+  // why is capacity at 12? not 18?
+  // push(value) {
+  //   if (this.length >= this._capacity) { // it's true, so run it
+  //     this._resize((3 + 1) * 3) // this is why _capacity=12?
+  //   }
+  //   memory.set(0 + 6, value)
+  //   this.length ++
+  // }
+
+  // console.log(arr);
 
   arr.pop();
   arr.pop();
   arr.pop();
-  console.log(arr);
 
-  console.log(arr.get(0))
+  // console.log(arr);
+  // Array { length: 3, _capacity: 12, ptr: 3 }
+  // the length of the array is now 3 because the function performed pop 3x, 
+  // taking away the last three items in array
+
+  // console.log(arr.get(0))
+  // first item in array: 3
 
   arr.pop();
   arr.pop();
   arr.pop();
   arr.push("tauhida")
   console.log(arr.get(0))
+  // result: NaN; 
+  // question: is it because it's not a number? are we not allowed to have strings?
 }
 
 main()
