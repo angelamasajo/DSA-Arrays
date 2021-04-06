@@ -1,5 +1,6 @@
-import Memory from './memory';
-import memory from './memory'
+const Memory = require('./memory')
+const memory = new Memory
+
 
 class Array {
   constructor() {
